@@ -16,8 +16,9 @@ function setup() {
 
   createCanvas(640, 360);
   background(0);
+
     for(let j = 0; j< 10; j++){
-      stroke(255, this.lifespan);
+      stroke(255);
       strokeWeight(2);
       fill(255,0,0);
       ellipse(random(width),random(height),30);
