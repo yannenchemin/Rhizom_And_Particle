@@ -32,6 +32,18 @@ class Particle {
     strokeWeight(2);
     fill(0,255,30, this.lifespan);
     ellipse(this.position.x, this.position.y, 15, 15);
+
+
+
+    if (dist(this.position.x, this.position.y, pmouseX, pmouseY) < 300) {
+     stroke(255);
+     beginShape()
+     vertex(this.position.x, this.position.y);
+     vertex(pmouseX, pmouseY);
+     endShape();
+
+    }
+
   }
 
   // Is the particle still useful?

@@ -17,24 +17,28 @@ function setup() {
   createCanvas(640, 360);
   background(0);
 
-    for(let j = 0; j< 10; j++){
-      stroke(255);
-      strokeWeight(2);
-      fill(255,0,0);
-      ellipse(random(width),random(height),30);
- }
+  for(let j = 0; j< 10; j++){ //빨간점
+    stroke(255);
+    strokeWeight(2);
+    fill(255,0,0);
+    ellipse(random(width),random(height),30);
+
+}
+    ellipse(mouseX,mouseY,100);
 }
 
-function draw() {
 
+function draw() {
+ //print(pmouseX + ' -> ' + mouseX);
   for (let i = 0; i < systems.length; i++) {
     systems[i].addParticle();
     systems[i].run();
+   }
 
-  //  systems1[j].;
+
 
   }
-}
+
 
 function mousePressed() {
   systems.push(new ParticleSystem(1, createVector(mouseX, mouseY)));
