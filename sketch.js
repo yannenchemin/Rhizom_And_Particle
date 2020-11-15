@@ -24,7 +24,6 @@ function setup() {
     ellipse(random(width),random(height),30);
 
 }
-    ellipse(mouseX,mouseY,100);
 }
 
 
@@ -42,4 +41,13 @@ function draw() {
 
 function mousePressed() {
   systems.push(new ParticleSystem(1, createVector(mouseX, mouseY)));
+
+  if (dist(pmouseX, pmouseY,this.position.x, this.position.y) < 100) {
+   stroke(255);
+   beginShape()
+   vertex(this.position.x, this.position.y);
+   vertex(pmouseX, pmouseY);
+   endShape();
+
+  }
 }

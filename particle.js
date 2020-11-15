@@ -12,6 +12,14 @@ class Particle {
     this.velocity = createVector(random(-1, 1), random(-1, 0));
     this.position = position.copy();
     this.lifespan = 255.0;
+    if (dist(this.position.x, this.position.y, pmouseX, pmouseY) < 100) {
+     stroke(255);
+     beginShape()
+     vertex(this.position.x, this.position.y);
+     vertex(pmouseX, pmouseY);
+     endShape();
+
+    }
   }
 
   run() {
@@ -24,6 +32,8 @@ class Particle {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
     this.lifespan -= 100;
+
+
   }
 
   // Method to display
@@ -35,14 +45,6 @@ class Particle {
 
 
 
-    if (dist(this.position.x, this.position.y, pmouseX, pmouseY) < 300) {
-     stroke(255);
-     beginShape()
-     vertex(this.position.x, this.position.y);
-     vertex(pmouseX, pmouseY);
-     endShape();
-
-    }
 
   }
 
